@@ -84,12 +84,12 @@
     <div class="max-w-6xl mx-auto text-center">
       <h2 class="text-2xl font-bold mb-8 text-blue-900">Gallery</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="./img/automation.jpg" alt="Automation" class="rounded-lg shadow-md hover:scale-105 transform transition" />
-        <img src="./img/ai_1.png" alt="Weighing System" class="rounded-lg shadow-md hover:scale-105 transform transition" />
-        <img src="./img/dws_1.jpg" alt="Industrial Robot" class="rounded-lg shadow-md hover:scale-105 transform transition" />
-        <img src="./img/plc_hmi.jpg" alt="Warehouse" class="rounded-lg shadow-md hover:scale-105 transform transition" />
-        <img src="./img/automation.jpg" alt="Scale" class="rounded-lg shadow-md hover:scale-105 transform transition" />
-        <img src="./img/plc_hmi_1.jpg" alt="Control System" class="rounded-lg shadow-md hover:scale-105 transform transition" />
+        <img src="./automation.jpg" alt="Automation" class="rounded-lg shadow-md hover:scale-105 transform transition" />
+        <img src="./ai_1.png" alt="Weighing System" class="rounded-lg shadow-md hover:scale-105 transform transition" />
+        <img src="./dws_1.jpg" alt="Industrial Robot" class="rounded-lg shadow-md hover:scale-105 transform transition" />
+        <img src="./plc_hmi.jpg" alt="Warehouse" class="rounded-lg shadow-md hover:scale-105 transform transition" />
+        <img src="./automation.jpg" alt="Scale" class="rounded-lg shadow-md hover:scale-105 transform transition" />
+        <img src="./plc_hmi_1.jpg" alt="Control System" class="rounded-lg shadow-md hover:scale-105 transform transition" />
 
         <img src="./img/swd.png" alt="Control System" class="rounded-lg shadow-md hover:scale-105 transform transition" />
         <img src="./img/ai.jpeg" alt="Control System" class="rounded-lg shadow-md hover:scale-105 transform transition" />
