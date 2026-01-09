@@ -16,7 +16,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: url('./ai.jpeg');
+      background-image: url('./img/ai.jpeg');
       background-size: cover;
       background-position: center;
       filter: blur(7px);
@@ -144,19 +144,128 @@
       from { transform: translateY(30px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
+
+    /* Mobile Menu Styles */
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    @media (max-width: 767px) {
+      .mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      nav.nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: 1px solid #e5e7eb;
+        display: flex !important;
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        margin: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      nav.nav-menu.active {
+        max-height: 500px;
+        padding: 0;
+      }
+
+      nav.nav-menu a {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid #f3f4f6;
+        margin: 0;
+        text-align: left;
+      }
+
+      nav.nav-menu a:last-child {
+        border-bottom: none;
+      }
+    }
+
+    /* Add scroll margin to all sections to prevent overlap with fixed header */
+    section {
+      scroll-margin-top: 70px;
+    }
+
+    /* Logo Styles */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: #1e3a8a;
+    }
+
+    .logo svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .logo-text {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e3a8a;
+    }
+
+    @media (max-width: 640px) {
+      .logo svg {
+        width: 32px;
+        height: 32px;
+      }
+
+      .logo-text {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- Header -->
-  <header class="bg-blue-900 text-white py-5 shadow-md sticky top-0 z-50">
+  <header class="bg-white text-gray-900 py-5 shadow-md sticky top-0 z-50 border-b border-gray-200 relative">
     <div class="container mx-auto flex justify-between items-center px-6">
-      <h1 class="text-2xl font-bold">Pranexus Automations</h1>
-      <nav class="space-x-4 hidden md:flex">
-        <a href="#home" class="hover:underline">Home</a>
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#services" class="hover:underline">Services</a>
-        <a href="#gallery" class="hover:underline">Gallery</a>
-        <a href="#contact" class="hover:underline">Contact Us</a>
+      <a href="#home" class="logo">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#1e3a8a" stroke-width="2">
+          <!-- Outer circle -->
+          <circle cx="50" cy="50" r="48"/>
+          <!-- Gear teeth (automation) -->
+          <circle cx="50" cy="50" r="30" fill="none" stroke="#2563eb"/>
+          <rect x="48" y="15" width="4" height="8" fill="#1e3a8a"/>
+          <rect x="48" y="77" width="4" height="8" fill="#1e3a8a"/>
+          <rect x="15" y="48" width="8" height="4" fill="#1e3a8a"/>
+          <rect x="77" y="48" width="8" height="4" fill="#1e3a8a"/>
+          <!-- Center circle (scale) -->
+          <circle cx="50" cy="50" r="12" fill="#2563eb" opacity="0.1"/>
+          <!-- Scale balance indicator -->
+          <line x1="50" y1="42" x2="50" y2="58" stroke="#2563eb" stroke-width="1.5"/>
+          <line x1="45" y1="50" x2="55" y2="50" stroke="#2563eb" stroke-width="1.5"/>
+        </svg>
+        <span class="logo-text">Pranexus</span>
+      </a>
+      <button class="mobile-menu-btn md:hidden" id="mobileMenuBtn" aria-label="Toggle menu">
+        <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <nav class="nav-menu space-x-4 hidden md:flex md:static">
+        <a href="#home" class="text-gray-700 hover:text-blue-900 transition">Home</a>
+        <a href="#about" class="text-gray-700 hover:text-blue-900 transition">About</a>
+        <a href="#services" class="text-gray-700 hover:text-blue-900 transition">Services</a>
+        <a href="#gallery" class="text-gray-700 hover:text-blue-900 transition">Gallery</a>
+        <a href="#contact" class="text-gray-700 hover:text-blue-900 transition">Contact Us</a>
       </nav>
     </div>
   </header>
@@ -230,55 +339,55 @@
       <h2 class="text-2xl font-bold mb-8 text-blue-900">Gallery</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Warehousing Automations" data-description="Advanced industrial automation systems designed to streamline production processes, enhance accuracy, and reduce operational downtime across manufacturing environments.">
-          <img src="./automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Warehousing Automations</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="System Design & Development" data-description="Precision load cells and digital indicators for industrial-scale weighing solutions with real-time data integration and accuracy verification.">
-          <img src="./ai_1.png" alt="System Design & Development" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/ai_1.png" alt="System Design & Development" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">System Design & Development</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Industrial Robot" data-description="State-of-the-art robotic arms for high-precision assembly, material handling, and automated manufacturing tasks in industrial settings.">
-          <img src="./dws_1.jpg" alt="Industrial Robot" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/dws_1.jpg" alt="Industrial Robot" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Industrial Robot</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Automations" data-description="Intelligent Automations automation solutions optimizing inventory management, order fulfillment, and logistics operations for peak efficiency.">
-          <img src="./plc_hmi.jpg" alt="Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/plc_hmi.jpg" alt="Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Automations</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Warehousing Automations" data-description="Advanced industrial automation systems designed to streamline production processes, enhance accuracy, and reduce operational downtime across manufacturing environments.">
-          <img src="./automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Warehousing Automations</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="PLC and HMI-based Systems" data-description="Advanced PLC and HMI-based PLC and HMI-based Systemss for real-time monitoring and management of complex industrial processes and workflows.">
-          <img src="./plc_hmi_1.jpg" alt="PLC and HMI-based Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/plc_hmi_1.jpg" alt="PLC and HMI-based Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">PLC and HMI-based Systems</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Software System" data-description="Software-driven Software systems integrating sensors, actuators, and networked devices for seamless industrial automation and monitoring.">
-          <img src="./swd.png" alt="Software System" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/swd.png" alt="Software System" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Software System</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="AI-powered Systems" data-description="AI-powered AI-powered Systems with machine learning capabilities for predictive maintenance, anomaly detection, and autonomous process optimization.">
-          <img src="./ai.jpeg" alt="AI-powered Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/ai.jpeg" alt="AI-powered Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">AI-powered Systems</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Integrated control solutions" data-description="Integrated control solutions combining hardware and software for comprehensive automation of manufacturing and distribution processes.">
-          <img src="./swd_1.webp" alt="Integrated control solutions" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/swd_1.webp" alt="Integrated control solutions" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Integrated control solutions</p>
           </div>
@@ -357,7 +466,27 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-300 py-4 text-center text-sm">
+  <footer class="bg-gray-800 text-gray-300 py-8 text-center text-sm">
+    <div class="flex justify-center mb-4">
+      <a href="#home" class="logo">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#9ca3af" stroke-width="2" style="width: 36px; height: 36px;">
+          <!-- Outer circle -->
+          <circle cx="50" cy="50" r="48"/>
+          <!-- Gear teeth (automation) -->
+          <circle cx="50" cy="50" r="30" fill="none" stroke="#60a5fa"/>
+          <rect x="48" y="15" width="4" height="8" fill="#9ca3af"/>
+          <rect x="48" y="77" width="4" height="8" fill="#9ca3af"/>
+          <rect x="15" y="48" width="8" height="4" fill="#9ca3af"/>
+          <rect x="77" y="48" width="8" height="4" fill="#9ca3af"/>
+          <!-- Center circle (scale) -->
+          <circle cx="50" cy="50" r="12" fill="#60a5fa" opacity="0.1"/>
+          <!-- Scale balance indicator -->
+          <line x1="50" y1="42" x2="50" y2="58" stroke="#60a5fa" stroke-width="1.5"/>
+          <line x1="45" y1="50" x2="55" y2="50" stroke="#60a5fa" stroke-width="1.5"/>
+        </svg>
+        <span class="logo-text" style="color: #d1d5db; font-size: 0.9rem;">Pranexus</span>
+      </a>
+    </div>
     © 2025 Pranexus Automations Pvt. Ltd. | All Rights Reserved.
   </footer>
 
@@ -374,6 +503,26 @@
   </div>
 
   <script>
+    // Mobile Menu Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const navMenu = document.querySelector('.nav-menu');
+      
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+        });
+      }
+      
+      // Close menu when a link is clicked
+      const navLinks = navMenu ? navMenu.querySelectorAll('a') : [];
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navMenu.classList.remove('active');
+        });
+      });
+    });
+
     // Gallery Modal Functionality
     document.addEventListener('DOMContentLoaded', function() {
       const modal = document.getElementById('galleryModal');
