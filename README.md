@@ -234,6 +234,17 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
+  <!-- Page Loader -->
+  <div id="siteLoader" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#ffffff;z-index:2000;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+      <svg width="60" height="60" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <circle cx="25" cy="25" r="20" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-dasharray="31.4 31.4">
+          <animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1s" repeatCount="indefinite" />
+        </circle>
+      </svg>
+      <div style="font-weight:600;color:#1e293b;">Loading...</div>
+    </div>
+  </div>
   <!-- Header -->
   <header class="bg-white text-gray-900 py-5 shadow-md sticky top-0 z-50 border-b border-gray-200 relative">
     <div class="container mx-auto flex justify-between items-center px-6">
@@ -404,6 +415,12 @@
         <!-- Left: Contact Details -->
         <div class="space-y-6 text-center md:text-left text-lg">
           <div class="p-6 contact-card">
+            <!-- Responsive Google Map (Pune) -->
+            <div style="width:100%;height:220px;overflow:hidden;border-radius:8px;margin-bottom:12px;">
+              <iframe
+                src="https://maps.google.com/maps?q=Bhosari%20MIDC%20Pune&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
             <h3 class="text-xl font-semibold text-blue-900 mb-3">Get in touch</h3>
             <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:pranexusautomation@gmail.com" class="underline text-blue-700">pranexusautomation@gmail.com</a></p>
             <p class="text-gray-700"><strong>Phone:</strong> +91 8626005513</p>
@@ -585,7 +602,17 @@
         setTimeout(function(){ msg.classList.add('hidden'); }, 5000);
       });
     });
+    
+    // Loader: fade out when page fully loads
+    window.addEventListener('load', function() {
+      var loader = document.getElementById('siteLoader');
+      if (!loader) return;
+      loader.style.transition = 'opacity 0.5s ease, visibility 0.5s ease';
+      loader.style.opacity = '0';
+      setTimeout(function(){
+        if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
+      }, 600);
+    });
   </script>
 </body>
 </html>
-
