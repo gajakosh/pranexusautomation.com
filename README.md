@@ -408,7 +408,7 @@
             <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:pranexusautomation@gmail.com" class="underline text-blue-700">pranexusautomation@gmail.com</a></p>
             <p class="text-gray-700"><strong>Phone:</strong> +91 8626005513</p>
             <p class="text-gray-700"><strong>Address:</strong> Pune, Maharashtra, India</p>
-            <p class="mt-4 text-sm text-gray-600">Office hours: Mon–Fri, 9:00 AM – 6:00 PM</p>
+            <!-- <p class="mt-4 text-sm text-gray-600">Office hours: Mon–Fri, 9:00 AM – 6:00 PM</p> -->
           </div>
         </div>
 
