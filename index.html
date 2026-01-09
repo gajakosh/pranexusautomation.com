@@ -5,6 +5,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pranexus Automations Pvt. Ltd.</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Blurred background layer for the #home section while keeping text sharp */
+    #home {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #home::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('./ai.jpeg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(7px);
+      transform: scale(1.03);
+      z-index: 0;
+    }
+
+    /* Optional dark overlay above the blurred image for readability */
+    #home::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Ensure the content sits above the background layers */
+    #home .hero-content {
+      position: relative;
+      z-index: 10;
+    }
+    /* Contact form styles */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,250,250,0.95));
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.3);
+      overflow: hidden;
+    }
+
+    .form-input:focus {
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(96,165,250,0.15);
+      border-color: #60a5fa;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg,#2563eb,#1e40af);
+      box-shadow: 0 6px 18px rgba(30,64,175,0.3);
+    }
+
+    @media (min-width: 768px) {
+      .contact-card { padding: 2rem; }
+    }
+
+    /* Gallery Modal Styles */
+    .gallery-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn .3s ease;
+    }
+
+    .gallery-modal.active {
+      display: flex;
+    }
+
+    .gallery-modal-content {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: slideUp .3s ease;
+    }
+
+    .gallery-modal-img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
+      background: #f3f4f6;
+    }
+
+    .gallery-modal-body {
+      padding: 2rem;
+    }
+
+    .gallery-modal-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1e3a8a;
+      margin-bottom: 0.5rem;
+    }
+
+    .gallery-modal-desc {
+      color: #4b5563;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .gallery-modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      width: 2rem;
+      height: 2rem;
+      background: rgba(255,255,255,0.9);
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: #1e3a8a;
+      transition: background .2s ease;
+    }
+
+    .gallery-modal-close:hover {
+      background: white;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
   <!-- Header -->
@@ -22,9 +162,14 @@
   </header>
 
   <!-- Home Section -->
-  <section id="home" class="bg-blue-100 py-20 text-center">
-    <h2 class="text-3xl font-semibold mb-4">Industrial Automation & Weighing Systems</h2>
-    <p class="max-w-3xl mx-auto text-gray-700 text-lg">Providing cutting-edge automation and precision weighing solutions that empower industries with efficiency, accuracy, and innovation.</p>
+  <section id="home" class="min-h-screen text-center flex items-center justify-center relative">
+    <div class="hero-content max-w-3xl mx-auto px-6 md:px-12 py-20">
+      <h2 class="text-4xl md:text-5xl font-semibold mb-4 text-white">Industrial Automation & Weighing Systems</h2>
+      <p class="text-lg md:text-xl text-gray-100">Providing cutting-edge automation and precision weighing solutions that empower industries with efficiency, accuracy, and innovation.</p>
+      <div class="mt-8">
+        <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow transition">Inquiry Now</a>
+      </div>
+    </div>
   </section>
 
   <!-- About Section -->
@@ -84,27 +229,130 @@
     <div class="max-w-6xl mx-auto text-center">
       <h2 class="text-2xl font-bold mb-8 text-blue-900">Gallery</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="./automation.jpg" alt="Automation" class="rounded-lg shadow-md hover:scale-105 transform transition" />
-        <img src="./ai_1.png" alt="Weighing System" class="rounded-lg shadow-md hover:scale-105 transform transition" />
-        <img src="./dws_1.jpg" alt="Industrial Robot" class="rounded-lg shadow-md hover:scale-105 transform transition" />
-        <img src="./plc_hmi.jpg" alt="Warehouse" class="rounded-lg shadow-md hover:scale-105 transform transition" />
-        <img src="./automation.jpg" alt="Scale" class="rounded-lg shadow-md hover:scale-105 transform transition" />
-        <img src="./plc_hmi_1.jpg" alt="Control System" class="rounded-lg shadow-md hover:scale-105 transform transition" />
-
-        <img src="./swd.png" alt="Control System" class="rounded-lg shadow-md hover:scale-105 transform transition" />
-        <img src="./ai.jpeg" alt="Control System" class="rounded-lg shadow-md hover:scale-105 transform transition" />
-        <img src="./swd_1.webp" alt="Control System" class="rounded-lg shadow-md hover:scale-105 transform transition" />
+        <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Warehousing Automations" data-description="Advanced industrial automation systems designed to streamline production processes, enhance accuracy, and reduce operational downtime across manufacturing environments.">
+          <img src="./automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <p class="text-white text-lg font-semibold">Warehousing Automations</p>
+          </div>
+        </div>
+        <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="System Design & Development" data-description="Precision load cells and digital indicators for industrial-scale weighing solutions with real-time data integration and accuracy verification.">
+          <img src="./ai_1.png" alt="System Design & Development" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <p class="text-white text-lg font-semibold">System Design & Development</p>
+          </div>
+        </div>
+        <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Industrial Robot" data-description="State-of-the-art robotic arms for high-precision assembly, material handling, and automated manufacturing tasks in industrial settings.">
+          <img src="./dws_1.jpg" alt="Industrial Robot" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <p class="text-white text-lg font-semibold">Industrial Robot</p>
+          </div>
+        </div>
+        <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Automations" data-description="Intelligent Automations automation solutions optimizing inventory management, order fulfillment, and logistics operations for peak efficiency.">
+          <img src="./plc_hmi.jpg" alt="Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <p class="text-white text-lg font-semibold">Automations</p>
+          </div>
+        </div>
+        <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Warehousing Automations" data-description="Advanced industrial automation systems designed to streamline production processes, enhance accuracy, and reduce operational downtime across manufacturing environments.">
+          <img src="./automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <p class="text-white text-lg font-semibold">Warehousing Automations</p>
+          </div>
+        </div>
+        <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="PLC and HMI-based Systems" data-description="Advanced PLC and HMI-based PLC and HMI-based Systemss for real-time monitoring and management of complex industrial processes and workflows.">
+          <img src="./plc_hmi_1.jpg" alt="PLC and HMI-based Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <p class="text-white text-lg font-semibold">PLC and HMI-based Systems</p>
+          </div>
+        </div>
+        <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Software System" data-description="Software-driven Software systems integrating sensors, actuators, and networked devices for seamless industrial automation and monitoring.">
+          <img src="./swd.png" alt="Software System" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <p class="text-white text-lg font-semibold">Software System</p>
+          </div>
+        </div>
+        <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="AI-powered Systems" data-description="AI-powered AI-powered Systems with machine learning capabilities for predictive maintenance, anomaly detection, and autonomous process optimization.">
+          <img src="./ai.jpeg" alt="AI-powered Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <p class="text-white text-lg font-semibold">AI-powered Systems</p>
+          </div>
+        </div>
+        <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Integrated control solutions" data-description="Integrated control solutions combining hardware and software for comprehensive automation of manufacturing and distribution processes.">
+          <img src="./swd_1.webp" alt="Integrated control solutions" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <p class="text-white text-lg font-semibold">Integrated control solutions</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="py-16 bg-blue-900 text-white px-6 md:px-16">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-2xl font-bold mb-6">Contact Us</h2>
-      <p>Email: <a href="mailto:pranexusautomation@gmail.com" class="underline">pranexusautomation@gmail.com</a></p>
-      <p>Phone: +91 8626005513</p>
-      <p class="mt-2">Address: Pune, Maharashtra, India</p>
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl font-bold mb-6 text-center md:text-left">Contact Us</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <!-- Left: Contact Details -->
+        <div class="space-y-6 text-center md:text-left text-lg">
+          <div class="p-6 contact-card">
+            <h3 class="text-xl font-semibold text-blue-900 mb-3">Get in touch</h3>
+            <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:pranexusautomation@gmail.com" class="underline text-blue-700">pranexusautomation@gmail.com</a></p>
+            <p class="text-gray-700"><strong>Phone:</strong> +91 8626005513</p>
+            <p class="text-gray-700"><strong>Address:</strong> Pune, Maharashtra, India</p>
+            <p class="mt-4 text-sm text-gray-600">Office hours: Mon–Fri, 9:00 AM – 6:00 PM</p>
+          </div>
+        </div>
+
+        <!-- Right: Creative Inquiry Form -->
+        <div>
+          <form id="inquiryForm" action="#" method="post" class="contact-card p-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name<sup>*</sup></label>
+                <input id="name" name="name" required placeholder="Your name" class="form-input w-full border border-gray-300 rounded px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email<sup>*</sup></label>
+                <input id="email" name="email" type="email" required placeholder="you@example.com" class="form-input w-full border border-gray-300 rounded px-3 py-2 bg-white" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              <div>
+                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone/Mobile<sup>*</sup></label>
+                <input id="phone" name="phone" required placeholder="Your Mobile Number" class="form-input w-full border border-gray-300 rounded px-3 py-2 bg-white" />
+              </div>
+              <div>
+                <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                <input id="company" name="company" placeholder="Company name" class="form-input w-full border border-gray-300 rounded px-3 py-2 bg-white" />
+              </div>
+            </div>
+
+            <div class="mt-4">
+              
+            </div>
+
+            <div class="mt-4">
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project" class="form-input w-full border border-gray-300 rounded px-3 py-2 bg-white"></textarea>
+            </div>
+
+            <div class="flex items-center justify-between mt-4">
+              <div class="text-sm text-gray-600">
+                <label class="inline-flex items-center">
+                  <input type="checkbox" name="consent" class="form-checkbox h-4 w-4 text-blue-600" required />
+                  <span class="ml-2">I agree to be contacted regarding my inquiry.</span>
+                </label>
+              </div>
+              <div>
+                <button type="submit" class="btn-primary text-white font-semibold py-2 px-4 rounded">Send Inquiry</button>
+              </div>
+            </div>
+
+            <p id="formMsg" class="mt-3 text-sm text-green-600 hidden">Thank you — your inquiry has been sent.</p>
+          </form>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -112,7 +360,82 @@
   <footer class="bg-gray-800 text-gray-300 py-4 text-center text-sm">
     © 2025 Pranexus Automations Pvt. Ltd. | All Rights Reserved.
   </footer>
+
+  <!-- Gallery Modal -->
+  <div id="galleryModal" class="gallery-modal">
+    <div class="gallery-modal-content relative">
+      <button class="gallery-modal-close" id="modalClose">&times;</button>
+      <img id="modalImg" src="" alt="" class="gallery-modal-img" />
+      <div class="gallery-modal-body">
+        <h3 class="gallery-modal-title" id="modalTitle"></h3>
+        <p class="gallery-modal-desc" id="modalDesc"></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Gallery Modal Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('galleryModal');
+      const modalClose = document.getElementById('modalClose');
+      const modalImg = document.getElementById('modalImg');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDesc = document.getElementById('modalDesc');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      // Open modal on gallery item click
+      galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const title = this.getAttribute('data-title');
+          const description = this.getAttribute('data-description');
+          const img = this.querySelector('img');
+          
+          modalTitle.textContent = title;
+          modalDesc.textContent = description;
+          modalImg.src = img.src;
+          modalImg.alt = img.alt;
+          
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Close modal on close button click
+      modalClose.addEventListener('click', function() {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      });
+
+      // Close modal on backdrop click
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+
+      // Close modal on ESC key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          modal.classList.remove('active');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
+
+    // Basic client-side handling for inquiry form: show success message and clear form
+    document.addEventListener('DOMContentLoaded', function () {
+      var form = document.getElementById('inquiryForm');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        // simulate submission
+        var msg = document.getElementById('formMsg');
+        msg.classList.remove('hidden');
+        form.reset();
+        setTimeout(function(){ msg.classList.add('hidden'); }, 5000);
+      });
+    });
+  </script>
 </body>
 </html>
-
-
