@@ -504,7 +504,7 @@
         <span class="logo-text" style="color: #d1d5db; font-size: 0.9rem;">Pranexus</span>
       </a>
     </div>
-    © 2025 Pranexus Automations Pvt. Ltd. | All Rights Reserved.
+    © <span id="footerYear"></span> Pranexus Automations Pvt. Ltd. | All Rights Reserved.
   </footer>
 
   <!-- Gallery Modal -->
@@ -612,6 +612,14 @@
       setTimeout(function(){
         if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
       }, 600);
+    });
+
+    // Auto-update footer year
+    document.addEventListener('DOMContentLoaded', function() {
+      var yearElement = document.getElementById('footerYear');
+      if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+      }
     });
   </script>
 </body>
