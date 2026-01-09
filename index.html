@@ -16,7 +16,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: url('./ai.jpeg');
+      background-image: url('./img/ai.jpeg');
       background-size: cover;
       background-position: center;
       filter: blur(7px);
@@ -234,6 +234,17 @@
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
+  <!-- Page Loader -->
+  <div id="siteLoader" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#ffffff;z-index:2000;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
+      <svg width="60" height="60" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill="none">
+        <circle cx="25" cy="25" r="20" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-dasharray="31.4 31.4">
+          <animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1s" repeatCount="indefinite" />
+        </circle>
+      </svg>
+      <div style="font-weight:600;color:#1e293b;">Loading...</div>
+    </div>
+  </div>
   <!-- Header -->
   <header class="bg-white text-gray-900 py-5 shadow-md sticky top-0 z-50 border-b border-gray-200 relative">
     <div class="container mx-auto flex justify-between items-center px-6">
@@ -339,55 +350,55 @@
       <h2 class="text-2xl font-bold mb-8 text-blue-900">Gallery</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Warehousing Automations" data-description="Advanced industrial automation systems designed to streamline production processes, enhance accuracy, and reduce operational downtime across manufacturing environments.">
-          <img src="./automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Warehousing Automations</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="System Design & Development" data-description="Precision load cells and digital indicators for industrial-scale weighing solutions with real-time data integration and accuracy verification.">
-          <img src="./ai_1.png" alt="System Design & Development" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/ai_1.png" alt="System Design & Development" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">System Design & Development</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Industrial Robot" data-description="State-of-the-art robotic arms for high-precision assembly, material handling, and automated manufacturing tasks in industrial settings.">
-          <img src="./dws_1.jpg" alt="Industrial Robot" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/dws_1.jpg" alt="Industrial Robot" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Industrial Robot</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Automations" data-description="Intelligent Automations automation solutions optimizing inventory management, order fulfillment, and logistics operations for peak efficiency.">
-          <img src="./plc_hmi.jpg" alt="Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/plc_hmi.jpg" alt="Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Automations</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Warehousing Automations" data-description="Advanced industrial automation systems designed to streamline production processes, enhance accuracy, and reduce operational downtime across manufacturing environments.">
-          <img src="./automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Warehousing Automations</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="PLC and HMI-based Systems" data-description="Advanced PLC and HMI-based PLC and HMI-based Systemss for real-time monitoring and management of complex industrial processes and workflows.">
-          <img src="./plc_hmi_1.jpg" alt="PLC and HMI-based Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/plc_hmi_1.jpg" alt="PLC and HMI-based Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">PLC and HMI-based Systems</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Software System" data-description="Software-driven Software systems integrating sensors, actuators, and networked devices for seamless industrial automation and monitoring.">
-          <img src="./swd.png" alt="Software System" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/swd.png" alt="Software System" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Software System</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="AI-powered Systems" data-description="AI-powered AI-powered Systems with machine learning capabilities for predictive maintenance, anomaly detection, and autonomous process optimization.">
-          <img src="./ai.jpeg" alt="AI-powered Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/ai.jpeg" alt="AI-powered Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">AI-powered Systems</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Integrated control solutions" data-description="Integrated control solutions combining hardware and software for comprehensive automation of manufacturing and distribution processes.">
-          <img src="./swd_1.webp" alt="Integrated control solutions" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/swd_1.webp" alt="Integrated control solutions" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Integrated control solutions</p>
           </div>
@@ -404,6 +415,12 @@
         <!-- Left: Contact Details -->
         <div class="space-y-6 text-center md:text-left text-lg">
           <div class="p-6 contact-card">
+            <!-- Responsive Google Map (Pune) -->
+            <div style="width:100%;height:220px;overflow:hidden;border-radius:8px;margin-bottom:12px;">
+              <iframe
+                src="https://maps.google.com/maps?q=Bhosari%20MIDC%20Pune&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
             <h3 class="text-xl font-semibold text-blue-900 mb-3">Get in touch</h3>
             <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:pranexusautomation@gmail.com" class="underline text-blue-700">pranexusautomation@gmail.com</a></p>
             <p class="text-gray-700"><strong>Phone:</strong> +91 8626005513</p>
@@ -585,7 +602,17 @@
         setTimeout(function(){ msg.classList.add('hidden'); }, 5000);
       });
     });
+    
+    // Loader: fade out when page fully loads
+    window.addEventListener('load', function() {
+      var loader = document.getElementById('siteLoader');
+      if (!loader) return;
+      loader.style.transition = 'opacity 0.5s ease, visibility 0.5s ease';
+      loader.style.opacity = '0';
+      setTimeout(function(){
+        if (loader && loader.parentNode) loader.parentNode.removeChild(loader);
+      }, 600);
+    });
   </script>
 </body>
 </html>
-
