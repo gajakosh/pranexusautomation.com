@@ -53,6 +53,17 @@
       border-color: #60a5fa;
     }
 
+    /* Ensure form input text is readable on dark section backgrounds */
+    .contact-card .form-input,
+    .contact-card textarea.form-input {
+      color: #111827; /* Tailwind text-gray-900 */
+    }
+
+    .contact-card .form-input::placeholder,
+    .contact-card textarea.form-input::placeholder {
+      color: #6b7280; /* Tailwind placeholder-gray-500 */
+      opacity: 1;
+    }
     .btn-primary {
       background: linear-gradient(90deg,#2563eb,#1e40af);
       box-shadow: 0 6px 18px rgba(30,64,175,0.3);
@@ -231,6 +242,101 @@
         font-size: 1rem;
       }
     }
+
+
+    /* Table css */
+    /* Modal overlay */
+    .dws-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 9999;
+    }
+
+    /* Full width modal */
+    .dws-modal-content {
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .dws-modal-header {
+      background: #7f94ad;
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dws-modal-header h2 {
+      font-size: 20px;
+      margin: 0;
+    }
+
+    .dws-close {
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Body */
+    .dws-modal-body {
+      padding: 16px;
+      overflow: auto;
+      flex: 1;
+    }
+
+    /* Responsive table wrapper */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    /* Table styling */
+    .dws-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+    }
+
+    .dws-table th,
+    .dws-table td {
+      border: 1px solid #333;
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+
+    .dws-table thead th {
+      background: #dfe3ea;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .section-title {
+      background: #7f94ad;
+      color: #fff;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .dws-modal-header h2 {
+        font-size: 16px;
+      }
+      .dws-table th,
+      .dws-table td {
+        font-size: 13px;
+      }
+    }
+
+
+
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -276,6 +382,7 @@
         <a href="#about" class="text-gray-700 hover:text-blue-900 transition">About</a>
         <a href="#services" class="text-gray-700 hover:text-blue-900 transition">Services</a>
         <a href="#gallery" class="text-gray-700 hover:text-blue-900 transition">Gallery</a>
+        <a href="#products" class="text-gray-700 hover:text-blue-900 transition">Products</a>
         <a href="#contact" class="text-gray-700 hover:text-blue-900 transition">Contact Us</a>
       </nav>
     </div>
@@ -407,6 +514,67 @@
     </div>
   </section>
 
+  <!-- Products Section -->
+   <section id="products" class="py-16 bg-gray-100 px-6 md:px-16">
+      <div class="max-w-5xl mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-10 text-blue-900">Our Products</h2>
+        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
+          <div class="flex flex-col md:flex-row gap-6">
+            <div class="md:w-1/2">
+              <img src="./DWS_new.jpeg" alt="Product 1" class="w-full h-auto rounded-lg object-cover" />
+            </div>
+            <div class="md:w-1/2 text-left">
+              <h3 class="font-semibold text-lg mb-4">Product 1</h3>
+              <table class="w-full text-sm border-collapse border border-gray-300">
+                <tbody>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300" style="text-align: center; background-color: #60a5fa; color: #ffffff;" colspan="2">DIMENSIONING WEIGHING & SCANNING (DWS)</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">Barcode,  Volumetric (L*B*H) and Physical Weight</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">Parcel's Image and Image data storage</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">WMS, ERP, SAS, API Cloud Integration</td>
+                  </tr>
+
+                  <tr class="border-b border-gray-300">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">High speed of scanning</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">Software Customization</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">Cost Effective</td>
+                  </tr>
+                  <tr class="border-b border-gray-300">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">24*7 Support</td>
+                  </tr>
+                  <!-- Add more rows as needed -->
+                </tbody>
+              </table>
+              <div class="mt-6">
+                <!-- <button
+                  id="openProductModal"
+                  class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg shadow transition"
+                >
+                  Show Detailed Specifications
+                </button> -->
+                <button
+                    id="openDwsModal"
+                    class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg shadow"
+                  >
+                    View DWS Models Comparison
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   <!-- Contact Section -->
   <section id="contact" class="py-16 bg-blue-900 text-white px-6 md:px-16">
     <div class="max-w-6xl mx-auto">
@@ -519,6 +687,76 @@
     </div>
   </div>
 
+  <!-- Product details Modal -->
+   <!-- Product Details Modal (Responsive) -->
+  <!-- DWS Full Width Modal -->
+<div id="dwsModal" class="dws-modal">
+  <div class="dws-modal-content">
+    
+    <!-- Header -->
+    <div class="dws-modal-header">
+      <h2>DWS Models – Technical Comparison</h2>
+      <span class="dws-close">&times;</span>
+    </div>
+
+    <!-- Body -->
+    <div class="dws-modal-body">
+      <div class="table-responsive">
+
+        <table class="dws-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>PranExus-PE001PNS</th>
+              <th>PranExus-PE001PNB</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr><td colspan="3" class="section-title">DWS Models</td></tr>
+
+            <tr><td>Object Shapes</td><td>Cuboid, Irregular</td><td>Cuboid, Irregular</td></tr>
+            <tr><td>Maximum Object Size (L×B×H)</td><td>700×700×700 mm</td><td>1500×1000×600 mm</td></tr>
+            <tr><td>Minimum Object Size (L×B×H)</td><td>50×50×10 mm</td><td>300×200×50 mm</td></tr>
+            <tr><td>Dimensional Accuracy</td><td>±10 mm</td><td>±10 mm</td></tr>
+            <tr><td>Weighing Minimum Range</td><td>50 gm</td><td>50 gm</td></tr>
+            <tr><td>Weighing Maximum Range</td><td>200 Kg</td><td>300 Kg</td></tr>
+            <tr><td>Weighing Accuracy</td><td>50 gm</td><td>50 gm</td></tr>
+            <tr><td>Scanning Speed</td><td>900–1200 / Hour</td><td>600–1000 / Hour</td></tr>
+            <tr><td>Object Position</td><td>Platform Center</td><td>Platform Center</td></tr>
+            <tr><td>Surface Characteristics</td><td>MS with Power Coating</td><td>MS with Power Coating</td></tr>
+            <tr><td>Speed of Measurement</td><td>2–3 sec / weighment</td><td>2–3 sec / weighment</td></tr>
+            <tr><td>Barcode Scanning</td><td>USB / Bluetooth</td><td>USB / Bluetooth</td></tr>
+            <tr><td>Display</td><td>21&quot; Full HD (1920×1080)</td><td>21&quot; Full HD (1920×1080)</td></tr>
+            <tr><td>Platform Size</td><td>900×900 mm</td><td>1000×2000 mm</td></tr>
+            <tr><td>Memory</td><td>15–20 lakh entries (Auto Delete)</td><td>15–20 lakh entries (Auto Delete)</td></tr>
+
+            <tr><td colspan="3" class="section-title">Computer Hardware Specification</td></tr>
+
+            <tr><td>Industrial CPU</td><td>Core i5 10th Gen, 8GB RAM, 500GB SSD</td><td>Core i5 10th Gen, 8GB RAM, 500GB SSD</td></tr>
+            <tr><td>Sensor</td><td>2 Qty</td><td>2 Qty</td></tr>
+            <tr><td>Camera</td><td>HD / Depth Camera</td><td>HD / Depth Camera</td></tr>
+            <tr><td>Monitor</td><td>VGA 3m, Power 1.5m</td><td>VGA 3m, Power 1.5m</td></tr>
+            <tr><td>Load Cell</td><td>300 Kg Capacity</td><td>300 Kg Capacity</td></tr>
+            <tr><td>Keyboard & Mouse</td><td>Wireless (Battery)</td><td>Wireless (Battery)</td></tr>
+            <tr><td>Input Power</td><td>230V SOH2 with SMPS</td><td>230V SOH2 with SMPS</td></tr>
+
+            <tr><td colspan="3" class="section-title">Communication</td></tr>
+
+            <tr><td>Computer Interface</td><td>Ethernet, Bluetooth, USB, WiFi, IoT</td><td>Ethernet, Bluetooth, USB, WiFi, IoT</td></tr>
+            <tr><td>Data Capture</td><td>Web Server, L×B×H, Barcode, SQL</td><td>Web Server, L×B×H, Barcode, SQL</td></tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
   <script>
     // Mobile Menu Toggle
     document.addEventListener('DOMContentLoaded', function() {
@@ -539,6 +777,58 @@
         });
       });
     });
+
+    // Product show details
+    const dwsModal = document.getElementById('dwsModal');
+    const openBtn = document.getElementById('openDwsModal');
+    const closeBtn = document.querySelector('.dws-close');
+
+    openBtn.onclick = () => {
+      dwsModal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    };
+
+    closeBtn.onclick = () => {
+      dwsModal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    };
+
+    window.onclick = (e) => {
+      if (e.target === dwsModal) {
+        dwsModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    };
+  //   document.addEventListener('DOMContentLoaded', function () {
+  //   const openBtn = document.getElementById('openProductModal');
+  //   const modal = document.getElementById('productModal');
+  //   const closeBtn = document.getElementById('closeProductModal');
+  //   const closeFooterBtn = document.getElementById('closeProductModalFooter');
+
+  //   function openModal() {
+  //     modal.classList.remove('hidden');
+  //     document.body.style.overflow = 'hidden';
+  //   }
+
+  //   function closeModal() {
+  //     modal.classList.add('hidden');
+  //     document.body.style.overflow = 'auto';
+  //   }
+
+  //   openBtn.addEventListener('click', openModal);
+  //   closeBtn.addEventListener('click', closeModal);
+  //   closeFooterBtn.addEventListener('click', closeModal);
+
+  //   modal.addEventListener('click', function (e) {
+  //     if (e.target === modal) closeModal();
+  //   });
+
+  //   document.addEventListener('keydown', function (e) {
+  //     if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+  //       closeModal();
+  //     }
+  //   });
+  // });
 
     // Gallery Modal Functionality
     document.addEventListener('DOMContentLoaded', function() {
