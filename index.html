@@ -16,7 +16,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background-image: url('./ai.jpeg');
+      background-image: url('./img/ai.jpeg');
       background-size: cover;
       background-position: center;
       filter: blur(7px);
@@ -29,7 +29,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+      background: linear-gradient(rgba(26, 11, 36, 0.45), rgba(26, 11, 36, 0.45));
       z-index: 1;
       pointer-events: none;
     }
@@ -41,16 +41,16 @@
     }
     /* Contact form styles */
     .contact-card {
-      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,250,250,0.95));
+      background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,248,252,0.95));
       border-radius: 12px;
-      box-shadow: 0 8px 30px rgba(2,6,23,0.3);
+      box-shadow: 0 8px 30px rgba(58, 31, 77, 0.15);
       overflow: hidden;
     }
 
     .form-input:focus {
       outline: none;
-      box-shadow: 0 0 0 4px rgba(96,165,250,0.15);
-      border-color: #60a5fa;
+      box-shadow: 0 0 0 4px rgba(89, 46, 121, 0.15);
+      border-color: #592E79;
     }
 
     /* Ensure form input text is readable on dark section backgrounds */
@@ -65,8 +65,8 @@
       opacity: 1;
     }
     .btn-primary {
-      background: linear-gradient(90deg,#2563eb,#1e40af);
-      box-shadow: 0 6px 18px rgba(30,64,175,0.3);
+      background: linear-gradient(90deg, #592E79, #3A1F4D);
+      box-shadow: 0 6px 18px rgba(58, 31, 77, 0.3);
     }
 
     @media (min-width: 768px) {
@@ -78,7 +78,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.7);
+      background: rgba(26, 11, 36, 0.8);
       z-index: 1000;
       align-items: center;
       justify-content: center;
@@ -104,7 +104,7 @@
       height: auto;
       max-height: 500px;
       object-fit: contain;
-      background: #f3f4f6;
+      background: #fdfbfe;
     }
 
     .gallery-modal-body {
@@ -114,7 +114,7 @@
     .gallery-modal-title {
       font-size: 1.5rem;
       font-weight: 600;
-      color: #1e3a8a;
+      color: #3A1F4D;
       margin-bottom: 0.5rem;
     }
 
@@ -138,7 +138,7 @@
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
-      color: #1e3a8a;
+      color: #3A1F4D;
       transition: background .2s ease;
     }
 
@@ -218,7 +218,7 @@
       align-items: center;
       gap: 0.75rem;
       text-decoration: none;
-      color: #1e3a8a;
+      color: #3A1F4D;
     }
 
     .logo svg {
@@ -229,7 +229,7 @@
     .logo-text {
       font-size: 1.25rem;
       font-weight: 700;
-      color: #1e3a8a;
+      color: #3A1F4D;
     }
 
     @media (max-width: 640px) {
@@ -250,7 +250,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(26, 11, 36, 0.7);
       z-index: 9999;
     }
 
@@ -266,7 +266,7 @@
 
     /* Header */
     .dws-modal-header {
-      background: #7f94ad;
+      background: #3A1F4D;
       color: #fff;
       padding: 16px 24px;
       display: flex;
@@ -306,19 +306,20 @@
 
     .dws-table th,
     .dws-table td {
-      border: 1px solid #333;
+      border: 1px solid #e5dceb;
       padding: 8px 10px;
       font-size: 14px;
     }
 
     .dws-table thead th {
-      background: #dfe3ea;
+      background: #f2eef5;
+      color: #3A1F4D;
       font-weight: bold;
       text-align: center;
     }
 
     .section-title {
-      background: #7f94ad;
+      background: #592E79;
       color: #fff;
       font-weight: bold;
       text-align: center;
@@ -334,9 +335,6 @@
         font-size: 13px;
       }
     }
-
-
-
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -344,31 +342,33 @@
   <div id="siteLoader" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#ffffff;z-index:2000;">
     <div style="display:flex;flex-direction:column;align-items:center;gap:12px;">
       <svg width="60" height="60" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" fill="none">
-        <circle cx="25" cy="25" r="20" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-dasharray="31.4 31.4">
+        <circle cx="25" cy="25" r="20" stroke="#592E79" stroke-width="4" stroke-linecap="round" stroke-dasharray="31.4 31.4">
           <animateTransform attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="1s" repeatCount="indefinite" />
         </circle>
       </svg>
-      <div style="font-weight:600;color:#1e293b;">Loading...</div>
+      <div style="font-weight:600;color:#3A1F4D;">Loading...</div>
     </div>
   </div>
+
   <!-- Header -->
-  <header class="bg-white text-gray-900 py-5 shadow-md sticky top-0 z-50 border-b border-gray-200 relative">
+  <header class="bg-white text-gray-900 py-5 shadow-md sticky top-0 z-50 border-b border-gray-100 relative">
     <div class="container mx-auto flex justify-between items-center px-6">
       <a href="#home" class="logo">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#1e3a8a" stroke-width="2">
+        <!-- <img src="./img/pran_logo1.png" alt="Pranexus Logo" style="position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:24px;height:24px;z-index:10;" /> -->
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#3A1F4D" stroke-width="2">
           <!-- Outer circle -->
           <circle cx="50" cy="50" r="48"/>
           <!-- Gear teeth (automation) -->
-          <circle cx="50" cy="50" r="30" fill="none" stroke="#2563eb"/>
-          <rect x="48" y="15" width="4" height="8" fill="#1e3a8a"/>
-          <rect x="48" y="77" width="4" height="8" fill="#1e3a8a"/>
-          <rect x="15" y="48" width="8" height="4" fill="#1e3a8a"/>
-          <rect x="77" y="48" width="8" height="4" fill="#1e3a8a"/>
+          <circle cx="50" cy="50" r="30" fill="none" stroke="#592E79"/>
+          <rect x="48" y="15" width="4" height="8" fill="#3A1F4D"/>
+          <rect x="48" y="77" width="4" height="8" fill="#3A1F4D"/>
+          <rect x="15" y="48" width="8" height="4" fill="#3A1F4D"/>
+          <rect x="77" y="48" width="8" height="4" fill="#3A1F4D"/>
           <!-- Center circle (scale) -->
-          <circle cx="50" cy="50" r="12" fill="#2563eb" opacity="0.1"/>
+          <circle cx="50" cy="50" r="12" fill="#592E79" opacity="0.1"/>
           <!-- Scale balance indicator -->
-          <line x1="50" y1="42" x2="50" y2="58" stroke="#2563eb" stroke-width="1.5"/>
-          <line x1="45" y1="50" x2="55" y2="50" stroke="#2563eb" stroke-width="1.5"/>
+          <line x1="50" y1="42" x2="50" y2="58" stroke="#592E79" stroke-width="1.5"/>
+          <line x1="45" y1="50" x2="55" y2="50" stroke="#592E79" stroke-width="1.5"/>
         </svg>
         <span class="logo-text">Pranexus</span>
       </a>
@@ -378,12 +378,12 @@
         </svg>
       </button>
       <nav class="nav-menu space-x-4 hidden md:flex md:static">
-        <a href="#home" class="text-gray-700 hover:text-blue-900 transition">Home</a>
-        <a href="#about" class="text-gray-700 hover:text-blue-900 transition">About</a>
-        <a href="#services" class="text-gray-700 hover:text-blue-900 transition">Services</a>
-        <a href="#gallery" class="text-gray-700 hover:text-blue-900 transition">Gallery</a>
-        <a href="#products" class="text-gray-700 hover:text-blue-900 transition">Products</a>
-        <a href="#contact" class="text-gray-700 hover:text-blue-900 transition">Contact Us</a>
+        <a href="#home" class="text-gray-700 hover:text-purple-900 transition style-link" style="--hover-color: #3A1F4D;">Home</a>
+        <a href="#about" class="text-gray-700 hover:text-purple-900 transition style-link" style="--hover-color: #3A1F4D;">About</a>
+        <a href="#services" class="text-gray-700 hover:text-purple-900 transition style-link" style="--hover-color: #3A1F4D;">Services</a>
+        <a href="#gallery" class="text-gray-700 hover:text-purple-900 transition style-link" style="--hover-color: #3A1F4D;">Gallery</a>
+        <a href="#products" class="text-gray-700 hover:text-purple-900 transition style-link" style="--hover-color: #3A1F4D;">Products</a>
+        <a href="#contact" class="text-gray-700 hover:text-purple-900 transition style-link" style="--hover-color: #3A1F4D;">Contact Us</a>
       </nav>
     </div>
   </header>
@@ -394,7 +394,7 @@
       <h2 class="text-4xl md:text-5xl font-semibold mb-4 text-white">Industrial Automation & Weighing Systems</h2>
       <p class="text-lg md:text-xl text-gray-100">Providing cutting-edge automation and precision weighing solutions that empower industries with efficiency, accuracy, and innovation.</p>
       <div class="mt-8">
-        <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow transition">Inquiry Now</a>
+        <a href="#contact" class="inline-block bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg shadow transition hover:bg-purple-800" style="background-color: #592E79;">Inquiry Now</a>
       </div>
     </div>
   </section>
@@ -402,7 +402,7 @@
   <!-- About Section -->
   <section id="about" class="py-16 px-6 md:px-16 bg-white">
     <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-2xl font-bold mb-10 text-blue-900">About Pranexus</h2>
+      <h2 class="text-2xl font-bold mb-10" style="color: #3A1F4D;">About Pranexus</h2>
       <p class="text-gray-700 leading-relaxed mb-4">
         Pranexus Automations Pvt. Ltd. is a technology-driven company specializing in Industrial Automation and Weighing Systems. We deliver end-to-end automation solutions that include hardware, software, and integration for manufacturing, logistics, and warehousing industries.
       </p>
@@ -419,32 +419,32 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="py-16 bg-gray-100 px-6 md:px-16">
+  <section id="services" class="py-16 bg-purple-50 bg-opacity-30 px-6 md:px-16" style="background-color: #fcfbfe;">
     <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-2xl font-bold mb-10 text-blue-900">Our Services</h2>
+      <h2 class="text-2xl font-bold mb-10" style="color: #3A1F4D;">Our Services</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
-          <h3 class="font-semibold text-lg mb-2">Automation Solutions</h3>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <h3 class="font-semibold text-lg mb-2" style="color: #592E79;">Automation Solutions</h3>
           <p class="text-gray-600">Design and integration of industrial automation systems using PLC, HMI, and sensors to streamline production and enhance accuracy.</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
-          <h3 class="font-semibold text-lg mb-2">Weighing Systems</h3>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <h3 class="font-semibold text-lg mb-2" style="color: #592E79;">Weighing Systems</h3>
           <p class="text-gray-600">Precision load cells, digital indicators, and software integration for industrial-scale weighing solutions.</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
-          <h3 class="font-semibold text-lg mb-2">DWS Machines</h3>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+          <h3 class="font-semibold text-lg mb-2" style="color: #592E79;">DWS Machines</h3>
           <p class="text-gray-600">Complete Dimensioning, Weighing & Scanning solutions for warehouses and logistics hubs to optimize parcel management.</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
-            <h3 class="font-semibold text-lg mb-2">Software Development</h3>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+            <h3 class="font-semibold text-lg mb-2" style="color: #592E79;">Software Development</h3>
             <p class="text-gray-600">Custom software design for industrial automation, data acquisition, weighing systems, and API integrations to improve process control and analytics.</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
-            <h3 class="font-semibold text-lg mb-2">AI-Based Solutions</h3>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+            <h3 class="font-semibold text-lg mb-2" style="color: #592E79;">AI-Based Solutions</h3>
             <p class="text-gray-600">Artificial Intelligence-driven automation for predictive maintenance, real-time analytics, defect detection, and process optimization in industrial environments.</p>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
-            <h3 class="font-semibold text-lg mb-2">Flexible Skate/Roller Wheels Conveyor</h3>
+        <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+            <h3 class="font-semibold text-lg mb-2" style="color: #592E79;">Flexible Skate/Roller Wheels Conveyor</h3>
             <p class="text-gray-600">Flexible conveyor systems with skate or roller wheels to enable smooth material handling, easy transport, and modular setup in warehouses and production lines.</p>
         </div>
       </div>
@@ -454,58 +454,58 @@
   <!-- Gallery Section -->
   <section id="gallery" class="py-16 px-6 md:px-16 bg-white">
     <div class="max-w-6xl mx-auto text-center">
-      <h2 class="text-2xl font-bold mb-8 text-blue-900">Gallery</h2>
+      <h2 class="text-2xl font-bold mb-8" style="color: #3A1F4D;">Gallery</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Warehousing Automations" data-description="Advanced industrial automation systems designed to streamline production processes, enhance accuracy, and reduce operational downtime across manufacturing environments.">
-          <img src="./automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Warehousing Automations</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="System Design & Development" data-description="Precision load cells and digital indicators for industrial-scale weighing solutions with real-time data integration and accuracy verification.">
-          <img src="./ai_1.png" alt="System Design & Development" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/ai_1.png" alt="System Design & Development" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">System Design & Development</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Industrial Robot" data-description="State-of-the-art robotic arms for high-precision assembly, material handling, and automated manufacturing tasks in industrial settings.">
-          <img src="./dws_1.jpg" alt="Industrial Robot" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/dws_1.jpg" alt="Industrial Robot" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Industrial Robot</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Automations" data-description="Intelligent Automations automation solutions optimizing inventory management, order fulfillment, and logistics operations for peak efficiency.">
-          <img src="./plc_hmi.jpg" alt="Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/plc_hmi.jpg" alt="Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Automations</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Warehousing Automations" data-description="Advanced industrial automation systems designed to streamline production processes, enhance accuracy, and reduce operational downtime across manufacturing environments.">
-          <img src="./automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/automation.jpg" alt="Warehousing Automations" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Warehousing Automations</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="PLC and HMI-based Systems" data-description="Advanced PLC and HMI-based PLC and HMI-based Systemss for real-time monitoring and management of complex industrial processes and workflows.">
-          <img src="./plc_hmi_1.jpg" alt="PLC and HMI-based Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/plc_hmi_1.jpg" alt="PLC and HMI-based Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">PLC and HMI-based Systems</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Software System" data-description="Software-driven Software systems integrating sensors, actuators, and networked devices for seamless industrial automation and monitoring.">
-          <img src="./swd.png" alt="Software System" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/swd.png" alt="Software System" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Software System</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="AI-powered Systems" data-description="AI-powered AI-powered Systems with machine learning capabilities for predictive maintenance, anomaly detection, and autonomous process optimization.">
-          <img src="./ai.jpeg" alt="AI-powered Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/ai.jpeg" alt="AI-powered Systems" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">AI-powered Systems</p>
           </div>
         </div>
         <div class="gallery-item relative rounded-lg shadow-md overflow-hidden group cursor-pointer" data-title="Integrated control solutions" data-description="Integrated control solutions combining hardware and software for comprehensive automation of manufacturing and distribution processes.">
-          <img src="./swd_1.webp" alt="Integrated control solutions" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
+          <img src="./img/swd_1.webp" alt="Integrated control solutions" class="w-full h-full object-cover group-hover:scale-105 transform transition duration-300" />
           <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
             <p class="text-white text-lg font-semibold">Integrated control solutions</p>
           </div>
@@ -515,56 +515,49 @@
   </section>
 
   <!-- Products Section -->
-   <section id="products" class="py-16 bg-gray-100 px-6 md:px-16">
+   <section id="products" class="py-16 bg-gray-100 px-6 md:px-16" style="background-color: #f5f3f7;">
       <div class="max-w-5xl mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-10 text-blue-900">Our Products</h2>
+        <h2 class="text-2xl font-bold mb-10" style="color: #3A1F4D;">Our Products</h2>
         <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition">
           <div class="flex flex-col md:flex-row gap-6">
             <div class="md:w-1/2">
-              <img src="./DWS_new.jpeg" alt="DIMENSIONING WEIGHING & SCANNING (DWS)" class="w-full h-auto rounded-lg object-cover" />
+              <img src="./img/DWS_new.jpeg" alt="DIMENSIONING WEIGHING & SCANNING (DWS)" class="w-full h-auto rounded-lg object-cover" />
             </div>
             <div class="md:w-1/2 text-left">
-              <h3 class="font-semibold text-lg mb-4">DWS</h3>
-              <table class="w-full text-sm border-collapse border border-gray-300">
+              <h3 class="font-semibold text-lg mb-4" style="color: #3A1F4D;">DWS</h3>
+              <table class="w-full text-sm border-collapse border border-gray-200">
                 <tbody>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300" style="text-align: center; background-color: #60a5fa; color: #ffffff;" colspan="2">DIMENSIONING WEIGHING & SCANNING (DWS)</td>
+                  <tr class="border-b border-gray-200">
+                    <td class="py-2 px-2 font-medium border-r border-gray-200" style="text-align: center; background-color: #592E79; color: #ffffff;" colspan="2">DIMENSIONING WEIGHING & SCANNING (DWS)</td>
                   </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">Barcode,  Volumetric (L*B*H) and Physical Weight</td>
+                  <tr class="border-b border-gray-200">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-200">Barcode,  Volumetric (L*B*H) and Physical Weight</td>
                   </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">Parcel's Image and Image data storage</td>
+                  <tr class="border-b border-gray-200">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-200">Parcel's Image and Image data storage</td>
                   </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">WMS, ERP, SAS, API Cloud Integration</td>
+                  <tr class="border-b border-gray-200">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-200">WMS, ERP, SAS, API Cloud Integration</td>
                   </tr>
-
-                  <tr class="border-b border-gray-300">
-                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">High speed of scanning</td>
+                  <tr class="border-b border-gray-200">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-200">High speed of scanning</td>
                   </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">Software Customization</td>
+                  <tr class="border-b border-gray-200">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-200">Software Customization</td>
                   </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">Cost Effective</td>
+                  <tr class="border-b border-gray-200">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-200">Cost Effective</td>
                   </tr>
-                  <tr class="border-b border-gray-300">
-                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-300">24*7 Support</td>
+                  <tr class="border-b border-gray-200">
+                    <td class="py-2 px-2 font-medium text-gray-700 border-r border-gray-200">24*7 Support</td>
                   </tr>
-                  <!-- Add more rows as needed -->
                 </tbody>
               </table>
               <div class="mt-6">
-                <!-- <button
-                  id="openProductModal"
-                  class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg shadow transition"
-                >
-                  Show Detailed Specifications
-                </button> -->
                 <button
                     id="openDwsModal"
-                    class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-lg shadow"
+                    class="text-white font-semibold py-2 px-6 rounded-lg shadow transition hover:bg-opacity-80"
+                    style="background-color: #3A1F4D;"
                   >
                     View DWS Models Comparison
                 </button>
@@ -576,7 +569,7 @@
     </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-blue-900 text-white px-6 md:px-16">
+  <section id="contact" class="py-16 text-white px-6 md:px-16" style="background-color: #3A1F4D;">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-2xl font-bold mb-6 text-center md:text-left">Contact Us</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
@@ -589,11 +582,10 @@
                 src="https://maps.google.com/maps?q=Bhosari%20MIDC%20Pune&t=&z=14&ie=UTF8&iwloc=&output=embed"
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <h3 class="text-xl font-semibold text-blue-900 mb-3">Get in touch</h3>
-            <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:pranexusautomation@gmail.com" class="underline text-blue-700">pranexusautomation@gmail.com</a></p>
+            <h3 class="text-xl font-semibold mb-3" style="color: #3A1F4D;">Get in touch</h3>
+            <p class="text-gray-700"><strong>Email:</strong> <a href="mailto:pranexusautomation@gmail.com" class="underline text-purple-800" style="color: #592E79;">pranexusautomation@gmail.com</a></p>
             <p class="text-gray-700"><strong>Phone:</strong> +91 8626005513</p>
             <p class="text-gray-700"><strong>Address:</strong> Pune, Maharashtra, India</p>
-            <!-- <p class="mt-4 text-sm text-gray-600">Office hours: Mon–Fri, 9:00 AM – 6:00 PM</p> -->
           </div>
         </div>
 
@@ -622,9 +614,7 @@
               </div>
             </div>
 
-            <div class="mt-4">
-              
-            </div>
+            <div class="mt-4"></div>
 
             <div class="mt-4">
               <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
@@ -634,7 +624,7 @@
             <div class="flex items-center justify-between mt-4">
               <div class="text-sm text-gray-600">
                 <label class="inline-flex items-center">
-                  <input type="checkbox" name="consent" class="form-checkbox h-4 w-4 text-blue-600" required />
+                  <input type="checkbox" name="consent" class="form-checkbox h-4 w-4 rounded" style="color: #592E79;" required />
                   <span class="ml-2">I agree to be contacted regarding my inquiry.</span>
                 </label>
               </div>
@@ -643,7 +633,7 @@
               </div>
             </div>
 
-            <p id="formMsg" class="mt-3 text-sm text-green-600 hidden">Thank you — your inquiry has been sent.</p>
+            <p id="formMsg" class="mt-3 text-sm text-green-700 hidden font-medium">Thank you — your inquiry has been sent.</p>
           </form>
         </div>
       </div>
@@ -651,23 +641,23 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-gray-300 py-8 text-center text-sm">
+  <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm border-t border-gray-800">
     <div class="flex justify-center mb-4">
       <a href="#home" class="logo">
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#9ca3af" stroke-width="2" style="width: 36px; height: 36px;">
           <!-- Outer circle -->
           <circle cx="50" cy="50" r="48"/>
           <!-- Gear teeth (automation) -->
-          <circle cx="50" cy="50" r="30" fill="none" stroke="#60a5fa"/>
+          <circle cx="50" cy="50" r="30" fill="none" stroke="#592E79"/>
           <rect x="48" y="15" width="4" height="8" fill="#9ca3af"/>
           <rect x="48" y="77" width="4" height="8" fill="#9ca3af"/>
           <rect x="15" y="48" width="8" height="4" fill="#9ca3af"/>
           <rect x="77" y="48" width="8" height="4" fill="#9ca3af"/>
           <!-- Center circle (scale) -->
-          <circle cx="50" cy="50" r="12" fill="#60a5fa" opacity="0.1"/>
+          <circle cx="50" cy="50" r="12" fill="#592E79" opacity="0.1"/>
           <!-- Scale balance indicator -->
-          <line x1="50" y1="42" x2="50" y2="58" stroke="#60a5fa" stroke-width="1.5"/>
-          <line x1="45" y1="50" x2="55" y2="50" stroke="#60a5fa" stroke-width="1.5"/>
+          <line x1="50" y1="42" x2="50" y2="58" stroke="#592E79" stroke-width="1.5"/>
+          <line x1="45" y1="50" x2="55" y2="50" stroke="#592E79" stroke-width="1.5"/>
         </svg>
         <span class="logo-text" style="color: #d1d5db; font-size: 0.9rem;">Pranexus</span>
       </a>
@@ -687,75 +677,62 @@
     </div>
   </div>
 
-  <!-- Product details Modal -->
-   <!-- Product Details Modal (Responsive) -->
   <!-- DWS Full Width Modal -->
-<div id="dwsModal" class="dws-modal">
-  <div class="dws-modal-content">
-    
-    <!-- Header -->
-    <div class="dws-modal-header">
-      <h2>DWS Models – Technical Comparison</h2>
-      <span class="dws-close">&times;</span>
-    </div>
+  <div id="dwsModal" class="dws-modal">
+    <div class="dws-modal-content">
+      <!-- Header -->
+      <div class="dws-modal-header">
+        <h2>DWS Models – Technical Comparison</h2>
+        <span class="dws-close">&times;</span>
+      </div>
 
-    <!-- Body -->
-    <div class="dws-modal-body">
-      <div class="table-responsive">
+      <!-- Body -->
+      <div class="dws-modal-body">
+        <div class="table-responsive">
+          <table class="dws-table">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>PranExus-PE001PNS</th>
+                <th>PranExus-PE001PNB</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td colspan="3" class="section-title">DWS Models</td></tr>
+              <tr><td>Object Shapes</td><td>Cuboid, Irregular</td><td>Cuboid, Irregular</td></tr>
+              <tr><td>Maximum Object Size (L×B×H)</td><td>700×700×700 mm</td><td>1500×1000×600 mm</td></tr>
+              <tr><td>Minimum Object Size (L×B×H)</td><td>50×50×10 mm</td><td>300×200×50 mm</td></tr>
+              <tr><td>Dimensional Accuracy</td><td>±10 mm</td><td>±10 mm</td></tr>
+              <tr><td>Weighing Minimum Range</td><td>50 gm</td><td>50 gm</td></tr>
+              <tr><td>Weighing Maximum Range</td><td>200 Kg</td><td>300 Kg</td></tr>
+              <tr><td>Weighing Accuracy</td><td>50 gm</td><td>50 gm</td></tr>
+              <tr><td>Scanning Speed</td><td>900–1200 / Hour</td><td>600–1000 / Hour</td></tr>
+              <tr><td>Object Position</td><td>Platform Center</td><td>Platform Center</td></tr>
+              <tr><td>Surface Characteristics</td><td>MS with Power Coating</td><td>MS with Power Coating</td></tr>
+              <tr><td>Speed of Measurement</td><td>2–3 sec / weighment</td><td>2–3 sec / weighment</td></tr>
+              <tr><td>Barcode Scanning</td><td>USB / Bluetooth</td><td>USB / Bluetooth</td></tr>
+              <tr><td>Display</td><td>21&quot; Full HD (1920×1080)</td><td>21&quot; Full HD (1920×1080)</td></tr>
+              <tr><td>Platform Size</td><td>900×900 mm</td><td>1000×2000 mm</td></tr>
+              <tr><td>Memory</td><td>15–20 lakh entries (Auto Delete)</td><td>15–20 lakh entries (Auto Delete)</td></tr>
 
-        <table class="dws-table">
-          <thead>
-            <tr>
-              <th>Parameter</th>
-              <th>PranExus-PE001PNS</th>
-              <th>PranExus-PE001PNB</th>
-            </tr>
-          </thead>
+              <tr><td colspan="3" class="section-title">Computer Hardware Specification</td></tr>
+              <tr><td>Industrial CPU</td><td>Core i5 10th Gen, 8GB RAM, 500GB SSD</td><td>Core i5 10th Gen, 8GB RAM, 500GB SSD</td></tr>
+              <tr><td>Sensor</td><td>2 Qty</td><td>2 Qty</td></tr>
+              <tr><td>Camera</td><td>HD / Depth Camera</td><td>HD / Depth Camera</td></tr>
+              <tr><td>Monitor</td><td>VGA 3m, Power 1.5m</td><td>VGA 3m, Power 1.5m</td></tr>
+              <tr><td>Load Cell</td><td>300 Kg Capacity</td><td>300 Kg Capacity</td></tr>
+              <tr><td>Keyboard & Mouse</td><td>Wireless (Battery)</td><td>Wireless (Battery)</td></tr>
+              <tr><td>Input Power</td><td>230V SOH2 with SMPS</td><td>230V SOH2 with SMPS</td></tr>
 
-          <tbody>
-            <tr><td colspan="3" class="section-title">DWS Models</td></tr>
-
-            <tr><td>Object Shapes</td><td>Cuboid, Irregular</td><td>Cuboid, Irregular</td></tr>
-            <tr><td>Maximum Object Size (L×B×H)</td><td>700×700×700 mm</td><td>1500×1000×600 mm</td></tr>
-            <tr><td>Minimum Object Size (L×B×H)</td><td>50×50×10 mm</td><td>300×200×50 mm</td></tr>
-            <tr><td>Dimensional Accuracy</td><td>±10 mm</td><td>±10 mm</td></tr>
-            <tr><td>Weighing Minimum Range</td><td>50 gm</td><td>50 gm</td></tr>
-            <tr><td>Weighing Maximum Range</td><td>200 Kg</td><td>300 Kg</td></tr>
-            <tr><td>Weighing Accuracy</td><td>50 gm</td><td>50 gm</td></tr>
-            <tr><td>Scanning Speed</td><td>900–1200 / Hour</td><td>600–1000 / Hour</td></tr>
-            <tr><td>Object Position</td><td>Platform Center</td><td>Platform Center</td></tr>
-            <tr><td>Surface Characteristics</td><td>MS with Power Coating</td><td>MS with Power Coating</td></tr>
-            <tr><td>Speed of Measurement</td><td>2–3 sec / weighment</td><td>2–3 sec / weighment</td></tr>
-            <tr><td>Barcode Scanning</td><td>USB / Bluetooth</td><td>USB / Bluetooth</td></tr>
-            <tr><td>Display</td><td>21&quot; Full HD (1920×1080)</td><td>21&quot; Full HD (1920×1080)</td></tr>
-            <tr><td>Platform Size</td><td>900×900 mm</td><td>1000×2000 mm</td></tr>
-            <tr><td>Memory</td><td>15–20 lakh entries (Auto Delete)</td><td>15–20 lakh entries (Auto Delete)</td></tr>
-
-            <tr><td colspan="3" class="section-title">Computer Hardware Specification</td></tr>
-
-            <tr><td>Industrial CPU</td><td>Core i5 10th Gen, 8GB RAM, 500GB SSD</td><td>Core i5 10th Gen, 8GB RAM, 500GB SSD</td></tr>
-            <tr><td>Sensor</td><td>2 Qty</td><td>2 Qty</td></tr>
-            <tr><td>Camera</td><td>HD / Depth Camera</td><td>HD / Depth Camera</td></tr>
-            <tr><td>Monitor</td><td>VGA 3m, Power 1.5m</td><td>VGA 3m, Power 1.5m</td></tr>
-            <tr><td>Load Cell</td><td>300 Kg Capacity</td><td>300 Kg Capacity</td></tr>
-            <tr><td>Keyboard & Mouse</td><td>Wireless (Battery)</td><td>Wireless (Battery)</td></tr>
-            <tr><td>Input Power</td><td>230V SOH2 with SMPS</td><td>230V SOH2 with SMPS</td></tr>
-
-            <tr><td colspan="3" class="section-title">Communication</td></tr>
-
-            <tr><td>Computer Interface</td><td>Ethernet, Bluetooth, USB, WiFi, IoT</td><td>Ethernet, Bluetooth, USB, WiFi, IoT</td></tr>
-            <tr><td>Data Capture</td><td>Web Server, L×B×H, Barcode, SQL</td><td>Web Server, L×B×H, Barcode, SQL</td></tr>
-          </tbody>
-        </table>
-
+              <tr><td colspan="3" class="section-title">Communication</td></tr>
+              <tr><td>Computer Interface</td><td>Ethernet, Bluetooth, USB, WiFi, IoT</td><td>Ethernet, Bluetooth, USB, WiFi, IoT</td></tr>
+              <tr><td>Data Capture</td><td>Web Server, L×B×H, Barcode, SQL</td><td>Web Server, L×B×H, Barcode, SQL</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
-
   </div>
-</div>
-
-
-
 
   <script>
     // Mobile Menu Toggle
@@ -783,15 +760,19 @@
     const openBtn = document.getElementById('openDwsModal');
     const closeBtn = document.querySelector('.dws-close');
 
-    openBtn.onclick = () => {
-      dwsModal.style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    };
+    if(openBtn) {
+      openBtn.onclick = () => {
+        dwsModal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      };
+    }
 
-    closeBtn.onclick = () => {
-      dwsModal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    };
+    if(closeBtn) {
+      closeBtn.onclick = () => {
+        dwsModal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      };
+    }
 
     window.onclick = (e) => {
       if (e.target === dwsModal) {
@@ -799,36 +780,6 @@
         document.body.style.overflow = 'auto';
       }
     };
-  //   document.addEventListener('DOMContentLoaded', function () {
-  //   const openBtn = document.getElementById('openProductModal');
-  //   const modal = document.getElementById('productModal');
-  //   const closeBtn = document.getElementById('closeProductModal');
-  //   const closeFooterBtn = document.getElementById('closeProductModalFooter');
-
-  //   function openModal() {
-  //     modal.classList.remove('hidden');
-  //     document.body.style.overflow = 'hidden';
-  //   }
-
-  //   function closeModal() {
-  //     modal.classList.add('hidden');
-  //     document.body.style.overflow = 'auto';
-  //   }
-
-  //   openBtn.addEventListener('click', openModal);
-  //   closeBtn.addEventListener('click', closeModal);
-  //   closeFooterBtn.addEventListener('click', closeModal);
-
-  //   modal.addEventListener('click', function (e) {
-  //     if (e.target === modal) closeModal();
-  //   });
-
-  //   document.addEventListener('keydown', function (e) {
-  //     if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-  //       closeModal();
-  //     }
-  //   });
-  // });
 
     // Gallery Modal Functionality
     document.addEventListener('DOMContentLoaded', function() {
@@ -857,18 +808,22 @@
       });
 
       // Close modal on close button click
-      modalClose.addEventListener('click', function() {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      });
-
-      // Close modal on backdrop click
-      modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
+      if(modalClose) {
+        modalClose.addEventListener('click', function() {
           modal.classList.remove('active');
           document.body.style.overflow = 'auto';
-        }
-      });
+        });
+      }
+
+      // Close modal on backdrop click
+      if(modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+          }
+        });
+      }
 
       // Close modal on ESC key
       document.addEventListener('keydown', function(e) {
@@ -879,13 +834,12 @@
       });
     });
 
-    // Basic client-side handling for inquiry form: show success message and clear form
+    // Basic client-side handling for inquiry form
     document.addEventListener('DOMContentLoaded', function () {
       var form = document.getElementById('inquiryForm');
       if (!form) return;
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        // simulate submission
         var msg = document.getElementById('formMsg');
         msg.classList.remove('hidden');
         form.reset();
@@ -914,4 +868,3 @@
   </script>
 </body>
 </html>
-
